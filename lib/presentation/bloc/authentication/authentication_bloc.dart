@@ -18,10 +18,8 @@ class AuthenticationBloc
   Stream<AuthenticationState> mapEventToState(
       AuthenticationEvent event) async* {
     if (event is AppStartedEvent) {
-      print('hello');
       try {
         var isSignedIn = await _repository.isSignIn();
-        print(isSignedIn);
         if (isSignedIn) {
           dynamic user = await _repository.getCurrentUser();
           yield AuthenticatedState(user: user);

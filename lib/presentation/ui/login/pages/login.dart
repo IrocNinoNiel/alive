@@ -88,7 +88,7 @@ class LoginPage extends StatelessWidget {
 
   void navigationToHomePage(BuildContext context, FirebaseUser user) {
     Navigator.push(context, MaterialPageRoute(builder: (context) {
-      return HomePageParent(user);
+      return HomePageParent();
     }));
   }
 

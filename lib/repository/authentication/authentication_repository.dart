@@ -5,8 +5,8 @@ class AuthenticationRepository {
   Future signInUser(String email, String password) =>
       AuthService().signInUser(email, password);
 
-  Future registerUser(String email, String password) =>
-      AuthService().registerUser(email, password);
+  Future registerUser(String email, String password, String name) =>
+      AuthService().registerUser(email, password, name);
 
   Future signOut() => AuthService().signOut();
 

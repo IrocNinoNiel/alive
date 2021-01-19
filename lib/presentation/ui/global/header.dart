@@ -19,7 +19,7 @@ class Header extends StatelessWidget {
           style: TextStyle(
               fontSize: 50,
               fontWeight: FontWeight.bold,
-              color: Color(0xff42b883)),
+              color: Color(0xffff3248)),
         )
       ],
     );

@@ -35,6 +35,7 @@ class AuthService {
   Future registerUser(
     String email,
     String password,
+    String username,
   ) async {
     try {
       AuthResult result = await _auth.createUserWithEmailAndPassword(
@@ -42,7 +43,7 @@ class AuthService {
       FirebaseUser user = result.user;
       // Create a new Document
       await UserRepository()
-          .updateUserData(user.uid, 'User#${user.uid}', true, DateTime.now());
+          .updateUserData(user.uid, username, true, DateTime.now());
       // // Get All the User from the Database
       // QuerySnapshot querySnapshot = await UserRepository().getUsers();
       // querySnapshot.documents.forEach((document) {

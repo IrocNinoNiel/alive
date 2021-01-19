@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mob_prog_project/presentation/bloc/authentication/authentication_bloc.dart';
-import 'package:mob_prog_project/presentation/ui/flash_screen/pages/welcome.dart';
 import 'package:mob_prog_project/presentation/ui/homepage/homepage.dart';
 import 'package:mob_prog_project/presentation/ui/login/pages/login.dart';
 import 'package:mob_prog_project/repository/authentication/authentication_repository.dart';
@@ -41,9 +40,9 @@ class App extends StatelessWidget {
       child: BlocBuilder<AuthenticationBloc, AuthenticationState>(
         builder: (context, state) {
           if (state is AuthInitialState) {
-            return WelcomeFlashScreen();
+            return Container();
           } else if (state is AuthenticatedState) {
-            return HomePageParent(state.user);
+            return HomePageParent();
           } else if (state is UnAuthenticatedState) {
             return LoginPageParent();
           } else if (state is NetworkErrorState) {

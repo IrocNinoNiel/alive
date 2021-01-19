@@ -23,7 +23,7 @@ class QuestionPanel extends StatelessWidget {
           FlatButton(
               onPressed: function,
               child: Text('$routeText',
-                  style: TextStyle(color: Color(0xff42b883))))
+                  style: TextStyle(color: Color(0xffff3248))))
         ],
       ),
     );

@@ -28,13 +28,13 @@ class RegistrationBloc extends Bloc<RegistrationEvent, RegistrationState> {
         } else if (event.password != event.password1) {
           yield RegistrationFailureState(message: "Password Dont Match");
         } else {
-          var user =
-              await _repository.registerUser(event.email, event.password);
-          print(user);
+          var user = await _repository.registerUser(
+              event.email, event.password, event.name);
           yield RegistrationSuccessState(user: user);
         }
       } catch (e) {
-        yield RegistrationFailureState(message: "Email Already Exist");
+        print(e);
+        yield RegistrationFailureState(message: "Error Occured");
       }
     }
   }

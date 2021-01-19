@@ -69,7 +69,7 @@ class Body extends StatelessWidget {
                 RoundedLogButton(
                   text: 'LOGIN',
                   function: checkUser,
-                  color: Color(0xff42b883),
+                  color: Color(0xffff3248),
                   textColor: Colors.white,
                 ),
               ],
@@ -82,13 +82,6 @@ class Body extends StatelessWidget {
               ),
             ),
             ContainerLine(),
-            SocialMediaButton(
-              text: 'Login With Facebook',
-              function: () {},
-              color: Color(0xff4267B2),
-              textColor: Colors.white,
-              icon: Icon(Icons.face),
-            ),
             QuestionPanel(
               text: 'Dont Have an Account yet?',
               routeText: 'Register',

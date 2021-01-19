@@ -21,6 +21,7 @@ class RegisterPageParent extends StatelessWidget {
 
 class RegisterPage extends StatelessWidget {
   TextEditingController emailController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController passwordController1 = TextEditingController();
 
@@ -62,6 +63,7 @@ class RegisterPage extends StatelessWidget {
   Widget buildInitialUI(BuildContext context) {
     return Body(
       email: emailController,
+      username: nameController,
       password1: passwordController,
       password2: passwordController1,
       toLoginPage: () {
@@ -75,6 +77,7 @@ class RegisterPage extends StatelessWidget {
 
   void addUser() {
     registrationBloc.add(SignUpEvent(
+        name: nameController.text,
         email: emailController.text,
         password: passwordController.text,
         password1: passwordController1.text));
@@ -86,7 +89,7 @@ class RegisterPage extends StatelessWidget {
 
   void navigationToHomePage(BuildContext context, FirebaseUser user) {
     Navigator.push(context, MaterialPageRoute(builder: (context) {
-      return HomePageParent(user);
+      return HomePageParent();
     }));
   }
 

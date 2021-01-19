@@ -8,6 +8,7 @@ import 'package:mob_prog_project/presentation/ui/global/text_field_container.dar
 
 class Body extends StatelessWidget {
   final TextEditingController email;
+  final TextEditingController username;
   final TextEditingController password1;
   final TextEditingController password2;
   final Function toLoginPage;
@@ -16,6 +17,7 @@ class Body extends StatelessWidget {
   const Body({
     Key key,
     this.toLoginPage,
+    this.username,
     this.email,
     this.password1,
     this.password2,
@@ -42,6 +44,14 @@ class Body extends StatelessWidget {
               ),
               Column(
                 children: <Widget>[
+                  TextFieldContainer(
+                    child: RoundedTextField(
+                      myController: username,
+                      isObscure: false,
+                      hintText: 'Enter Username',
+                      icon: Icons.person,
+                    ),
+                  ),
                   TextFieldContainer(
                     child: RoundedTextField(
                       myController: email,
@@ -72,7 +82,7 @@ class Body extends StatelessWidget {
                   RoundedLogButton(
                     text: 'Register',
                     function: addUser,
-                    color: Color(0xff42b883),
+                    color: Color(0xffff3248),
                     textColor: Colors.white,
                   ),
                 ],
